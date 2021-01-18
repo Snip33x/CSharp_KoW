@@ -1,0 +1,61 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Ap6_2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //Gra w zgadywanie wylosowanej przez Komputer liczby
+            // Komputer losuje liczbe  z zakresu 1 -10
+            // Użytownik próbuje odgadnąć wyulosowaną liczbę
+            // jeżeli podana liczba jest mniejsza lub więsza od wylosowanej - wyświete komunikat
+            // kiedy użytkownik odgadnie liczbę, wyświetl informację o wygranej
+
+            Random rnd = new Random();
+            int los = rnd.Next(1, 101);
+
+            int mojaLiczba;
+            int ileRazy = 0;
+
+
+            Console.WriteLine("Zgadnij liczbę z zakresu 1 - 100");
+            do
+            {
+
+
+                Console.Write("Podaj liczbę: ");
+                mojaLiczba = int.Parse(Console.ReadLine()); // można odrazu Parsować Readlina nie trzeba dodawać dodatkowych linijek na deklarowanie liczby i potem jej zamieniania
+                if (mojaLiczba > 100 || mojaLiczba < 1)
+                {
+                    Console.WriteLine("Liczba z poza zakresu");
+                }
+                else
+                {
+                    ileRazy++;
+                    if (mojaLiczba > los)
+                    {
+                        Console.WriteLine("Podałeś zbyt dużą liczbę!");
+                    }
+                    else if (mojaLiczba < los)
+                    {
+                        Console.WriteLine("Podałęś zbyt małą liczbę!");
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.Write("Brawo chrupku zgadłęś liczbę, to była liczba {0}, udało Ci się za {1} razem", los, ileRazy);
+                    }
+                }
+            } while (los != mojaLiczba);
+
+
+
+            Console.ReadKey();
+        }
+    }
+}
