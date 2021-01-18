@@ -1,0 +1,49 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Ap2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int a = 2;
+            int b = 3;
+            int c;
+
+            c = a + b;
+
+            a += b;
+
+            a++; //inkrementacja taki smaczek c#, można a--
+
+            float d = 13;
+            float f = 12;
+            float n;
+
+            n = d / f;
+
+            bool j = 2 > 1;
+
+            bool k = 3 == 3; // !=  , negacja całość w !() 
+
+            bool p = 1 == 1 && 1 != 1;  // && koniunkcja i AND - OR || alternatywa
+
+            
+
+
+
+
+            const string Stała = "Helloł";
+            Console.WriteLine(n);
+            Console.WriteLine(c);
+            Console.WriteLine(a);
+            Console.WriteLine(Math.Pow(2, 3));
+            Console.WriteLine(Math.Abs(-5));  // to jest metoda
+            Console.ReadKey();
+        }
+    }
+}
