@@ -1,0 +1,40 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Ap11
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            Dodaj(2, 4, 3);
+            
+            //Dodaj() // tutaj możemy sprawdzić ile jest przeciążeń
+
+            Dodaj_ze_stałą(2, 3, d: 56);
+            Console.ReadKey();
+        }
+
+        static void Dodaj(int a, int b)
+        {
+            int wynik = a + b;
+            Console.WriteLine("Wynik dodawania to : " + wynik);
+        }
+        static void Dodaj(int a, int b, int c) // funkcja o tej samej nazwie, ale z inną liczbą argumentów to przeciążanie
+        {
+            int wynik = a + b + c;
+            Console.WriteLine("Wynik dodawania to : " + wynik);
+        }
+        static void Dodaj_ze_stałą(int a, int b, int c = 20, int d = 0) // można tu dorzucić stringa, i potem w CW dopisać + i nazwę tego argumentu
+        {
+            int wynik = a + b + c + d;
+            Console.WriteLine("Wynik dodawania " + wynik);
+        }
+            
+
+    }
+}
