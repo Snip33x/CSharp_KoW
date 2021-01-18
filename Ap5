@@ -1,0 +1,59 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Ap5
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // KOMENTARZE
+
+            // Skróty klawiszowe & Snipetty
+            // ctrl k,d formatowanie kodu, ctrl k,c comentu all
+            // snipety 2x tab cw - konsola , for 
+
+            // Rzutowanie zmiennych - nie można przechowywać większych danych w mniejszych typach, tutaj w double utnie to co jest po przecinku
+            // int i = int.MaxValue;
+            // double d = 5.7;
+            // i = (int)d;
+            // Console.WriteLine(i);
+
+            // Wczytywanie danych z konsoli
+            /*string s = Console.ReadLine();
+            Console.WriteLine(s);
+            Console.ReadLine(); */
+            /*if (Console.ReadKey().Key == ConsoleKey.D1)
+                Console.WriteLine("Prawda");
+            Console.ReadKey();*/
+
+            // Konwersja typów (String > Int > String
+            //string s = Console.ReadLine();
+            //int i = int.Parse(s) + 2;
+            //Console.WriteLine(i);
+            //s = i.ToString();
+            //Console.WriteLine(s);
+
+            // Łączenie tekstu & formatowanie "Writeline"
+            string s1 = "witaj";
+            string s2 = " Świecie";
+            string s3 = s1 + s2;
+            Console.WriteLine(s3 + "!!! {0}\n{1}",s1,s2); // można odrazu tutaj s1 + s2
+
+
+            // Modyfikacja wyglądu konsoli
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.BackgroundColor = ConsoleColor.DarkBlue;
+            Console.WriteLine(s3 + "!!! {0}\n{1}", s1, s2); // można odrazu tutaj s1 + s2
+
+            Console.ReadKey();
+            Console.Clear();
+            // klusia
+            Console.ReadKey();
+
+        }
+    }
+}
