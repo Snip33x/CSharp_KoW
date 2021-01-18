@@ -1,0 +1,58 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Ap8
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int liczba;
+            liczba = int.Parse(Console.ReadLine());
+
+            //if (liczba == 1)
+            //{
+            //    Console.WriteLine("Jeden");
+            //}
+            //else if(liczba == 2)
+            //{
+            //    Console.WriteLine("Dwa");
+            //}
+            //else if(liczba == 3)
+            //{
+            //    Console.WriteLine("Trzy");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Inna liczba");
+            //}
+
+            char znak = 'a';
+
+            switch (liczba) //znak
+            {
+                case 1:
+                    Console.WriteLine("Jeden");
+                    goto koniec;
+                case 2:
+                    Console.WriteLine("dwa");
+                    goto case 1;
+                case 13:
+                    Console.WriteLine("trzynaście - liczba to konkretka liczba");
+                    break;
+                default:
+                    Console.WriteLine("Inna liczba");
+                    break;
+            }
+
+            Console.WriteLine("Dodatkowy tekst - zostaje pomijany jeżeli go to jest");
+            koniec:
+            Console.WriteLine("Koniec z go to jak wciśniemy 1 ");
+
+            Console.ReadKey();
+        }
+    }
+}
