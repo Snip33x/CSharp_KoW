@@ -1,0 +1,33 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Ap12
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(Dodaj(2, 41));
+            Console.ReadKey();
+        }
+
+        static string Dodaj(int a, int b) // string - tutaj określamy typ danych jakie będziemy returnować
+        {
+
+            int wynik = a + b;
+            if (wynik >= 10)
+            {
+                return "Wynik większy od 10";
+            }
+            else
+            {
+                return "WYnik mniejszy od 10";
+            }
+        }
+        // return tutaj jest bo jes static string, i zwracamy tekst, a nie void czyli nic
+
+    }
+}
