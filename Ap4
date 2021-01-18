@@ -1,0 +1,40 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Ap4
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // while | for | do while
+            int a = 0;
+            //while (a < 5)
+            //{
+            //    Console.WriteLine(a);
+            //    Console.WriteLine("Klusia");
+            //    a++;
+            //}
+            //Console.WriteLine(a);
+
+            //for (int b = 0; b < 5; b++) // zmienna w tym nawiasie jest tylko tutaj lokalna, i można ją deklarować w innych miejscach, można zostawić wolne miejsce i deklarować wcześniej
+            //{
+            //    Console.WriteLine(b);
+            //    Console.WriteLine("Klusia");
+            //}
+
+            do
+            {
+                Console.WriteLine("Tekst"); // wykona się przynajmniej raz
+
+            }
+            while (false);
+
+
+            Console.ReadKey();
+        }
+    }
+}
