@@ -1,0 +1,40 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Ap7
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int a = 0;
+
+            while (true)
+            {
+                if (a > 10)
+                {
+                    break; // za brejkiem wszystko jest omijane i niewykonywane
+                }
+                Console.WriteLine(a);
+                a++;
+
+                // continue - jeżeli prawda to pomija poniższy kod i przechodzi do kolejnej pętli
+            }
+
+        jeden:
+            Console.WriteLine("Jeden");
+            goto trzy;
+        dwa:
+            Console.WriteLine("dwa");
+        trzy:
+            Console.WriteLine("Trzy");
+
+
+            Console.ReadKey();
+
+        }
+    }
+}
