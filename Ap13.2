@@ -1,0 +1,32 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Ap13._2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] tab = new int[2];
+            tab[0] = 5; // jak nie tablice, to te by były po metodzie Test(tab);
+            tab[1] = 2; // 
+            Console.WriteLine("Przed: " + tab[0] + " , " + tab[1]);
+            Test(tab);
+            Console.WriteLine("Po: " + tab[0] + " , " + tab[1]);
+            Console.ReadKey();
+        }
+
+        // tu jak nie ma ref albo our to jest copy tylko ukryte
+        static void Test(int[] tab)  //ze względu że jest to tablica , i tutaj wrzucamy zwykłą funkcję(nie naprzykłąd ref albo out) a mimo to main wyświetla te zmienne 
+        {
+            tab[0] = 555; // ref służy do wysyłania oryginału - w przypadku prostych zmiennych
+            tab[1] = 222;
+            Console.WriteLine("Przed: " + tab[0] + " , " + tab[1]);
+        }
+    }// podstawowy sposób wysyłania danych złożonych to wysyłanie oryginału
+    // jeżeli jednak chcemy mieć tutaj tablice i wysłać ją dopiero dodając refa
+    // to tworzymy tablice tab = new int[2] w metodzie 
+}   
