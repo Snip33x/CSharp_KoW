@@ -1,0 +1,49 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Ap14
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Człowiek adi = new Człowiek();
+            Console.WriteLine(adi.imie);
+            adi.imie = "Bartek";
+            
+            Console.WriteLine(adi.imie);
+
+            Człowiek adi2 = new Człowiek();
+            Console.WriteLine(adi2.imie);
+
+            adi.PrzedstawSię();
+            adi2.PrzedstawSię();
+
+            Console.ReadKey();
+        }
+    }
+}
+
+
+// obiekt klasa - mogą być w jednym pliku - tutaj podział
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Ap14
+{
+    class Człowiek
+    {
+        public string imie = "Adrian"; // public jest żebyśmy mogli korzystać w innych klasach z tej deklaracji
+        public string nazwisko = "Kowalski";
+
+        public void PrzedstawSię()
+        {
+            Console.WriteLine("Mam na imię {0}", imie);
+        }
+    }
+}
