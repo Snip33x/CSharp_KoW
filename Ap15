@@ -1,0 +1,63 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Ap14
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Człowiek adi = new Człowiek("klusia, konstruktor wymusza podanie tutaj stringa", "Kolwalski");
+            Człowiek kluch = new Człowiek("Brzuś", "Martyna");
+            adi.PrzedstawSię();
+            Console.WriteLine(adi.nazwisko);
+            adi.imie = "Bartek";
+            adi.PrzedstawSię();
+            kluch.PrzedstawSię();
+            Console.ReadKey();
+        }
+    }
+}
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Ap14
+{
+    class Człowiek
+    {
+        /*
+        public Człowiek()
+        {
+            // to jest drugi konstruktor i teraz wywołując go w mainie możemy wybierać między dwoma
+        }
+
+        public Człowiek(string imiekonstruktora)
+        {
+            imie = imiekonstruktora;
+        }
+        */
+        public Człowiek(string imiekonstruktora, string nazwiskokonstruktora)
+        {
+            imie = imiekonstruktora;
+            nazwisko = nazwiskokonstruktora;
+        }
+
+        public string imie = "BRAK"; // public jest żebyśmy mogli korzystać w innych klasach z tej deklaracji
+        public string nazwisko = "BRAK";
+
+        public void PrzedstawSię()
+        {
+            Console.WriteLine("Mam na imię {0}", imie);
+        }
+    }
+}
+//konstruktor budujemy w klasie w której będziemy go wywoływać
+// destruktor na końcu kodu
