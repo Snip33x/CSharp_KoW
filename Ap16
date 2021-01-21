@@ -1,0 +1,70 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Ap16
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(CzlowiekStatic.liczbaLudnosci);
+            CzlowiekStatic.liczbaLudnosci = 10000; // ta zmienna teraz ponieważ jest niestatyczna, będzie wynosiła 10000 i nie da się jej zmienić i powrócić do oryginały, bo jest statyczna klasa 
+            Console.WriteLine(CzlowiekStatic.liczbaLudnosci);
+
+            Czlowiek czlowiek = new Czlowiek();
+            Console.WriteLine(czlowiek.imie);
+            czlowiek.imie = "Marek";
+            Console.WriteLine(czlowiek.imie);
+
+            Czlowiek czlowiek2 = new Czlowiek();
+            Console.WriteLine(czlowiek2.imie); // a tutaj sobie wracamy do wartości z niestatycznej klasy
+
+            Console.WriteLine(Czlowiek.liczbaLudnosci);
+
+            Console.ReadKey();
+
+
+
+        }
+    }
+}
+
+// różnicze między statystycznymi klasami i zwykłymi -?
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Ap16
+{
+    class Czlowiek
+    {
+        public string imie = "Adrian";
+        public static int liczbaLudnosci = 20000; 
+        // w niestatycznej klasie można deklarować statyczne zmienne, ale nie na odwrót
+    }
+}
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Ap16
+{
+    class CzlowiekStatic
+    {
+        public static int liczbaLudnosci = 20000;
+    }
+}// teraz każdą zmienną i metodę trzeba oznaczać jako static
+
