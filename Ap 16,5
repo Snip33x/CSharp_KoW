@@ -1,0 +1,78 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Ap16_5
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            Człowiek adi = new Człowiek();
+            adi.imie = "Adrian";
+            //adi.setWiek(43); to przy getterach i setterach takich podstawowych
+            //adi.setWiek(-20); // jak wcześniej nadaliśmy, to wtedy wartość nie logiczna nie zostanie przypisana
+
+            //Console.WriteLine($"Jestem {adi.imie} lat {adi.getWiek()}");
+
+            adi.Wiek = 20;
+            adi.Wiek = -20;
+            //adi.Wiek = 25;
+
+            Console.WriteLine($"Jestem {adi.imie} lat {adi.Wiek}");
+
+
+            Console.ReadKey();
+        }
+    }
+}
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Ap16_5
+{
+    class Człowiek
+    {
+
+        public string imie;
+        //ptivate int wiek;
+
+        //public int wiek { get; set; } //snippet prop - to taki podstawowy prop - poniżęj full
+
+        private int wiek;  //snippet propfull
+
+        public int Wiek // property
+        {
+            get { return wiek; }
+            set 
+            {
+                if (value >= 0 && value <= 200)
+                    wiek = value;
+                //else
+                //    wiek = 0; // przypanie 0 jeżeli warunek nie jest prawdziwy, bez tego, jeżeli warunek nie będzie prawdziwy to będzie pomijany, jeżeli wcześniej był podany prawdziwy warunek - prawdziwy czyli prawidłowy tylko już tego tekstu mi się nie chciało edytować bo łatwiej jest napisać
+            }
+        }
+
+
+
+        //public int getWiek()
+        //{
+        //    return wiek;
+        //}
+
+        //public void setWiek(int w)
+        //{
+        //    if (w >= 0 && w <= 200)
+        //        wiek = w;
+        //}
+    }
+}
+
