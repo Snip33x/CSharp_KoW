@@ -1,0 +1,33 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Globalization;
+
+namespace Ap19
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //var c = CultureInfo.GetCultures(CultureTypes.AllCultures);
+            //foreach (var item in c) //pętla obiektowa
+            //{
+            //    Console.WriteLine(item.Name);
+            //    Console.WriteLine(item.NumberFormat.NumberDecimalSeparator);
+            //}
+
+            Console.WriteLine(CultureInfo.CurrentCulture.Name);
+            var newCulture = (CultureInfo)CultureInfo.CurrentCulture.Clone();  // w nawiasach jest rzutowanie, nie możemy zmienić znaku curren culturze, bo są już znormalizowane, musimy stworzyć nową kulturę i do niej przypisać zmianę
+            newCulture.NumberFormat.NumberDecimalSeparator = ":";
+            newCulture.NumberFormat.NegativeSign = "Minus ";
+            CultureInfo.CurrentCulture = newCulture;
+
+            int a = -5;
+            float b = 3.14f;
+            Console.WriteLine($"{a}\n{b}");
+            Console.ReadKey();
+        }
+    }
+}
