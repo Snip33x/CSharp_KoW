@@ -1,0 +1,56 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Ap20
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // KOLEKCJE ArrayList
+            ArrayList list = new ArrayList();
+            list.Add(2);
+            list.Add("Bartek");
+            list.Add(new Auto("BMW"));
+            Console.WriteLine("Przed urzyciem metody remove at");
+            list.Insert(0, "Ala");
+            Console.WriteLine(list.Count);
+            
+
+            list.RemoveAt(1);
+            // list.Clear() - czyści całą listę
+
+            Console.WriteLine("\npo urzyciu metody removeAt ");
+            Console.WriteLine(list.Count);
+
+            Console.WriteLine("\njeden indeks z listy ( zmienia się indeks ");
+            Console.WriteLine(list[1].ToString());
+
+            Console.WriteLine("\npętla for each ");
+            foreach (var item in list)
+            {
+                Console.WriteLine(item);
+            }
+
+            Console.ReadKey();
+        }
+    }
+
+    class Auto
+    {
+        public string Nazwa { get; set; }
+        public Auto(string marka)
+        {
+            Nazwa = marka;
+        }
+        public override string ToString()
+        {
+            return Nazwa;     //base.ToString(); żeby nie zwracało nam nazwy i tego obiektu z listy
+        }// jest to przeciążęnie operatora
+
+    }
+}
