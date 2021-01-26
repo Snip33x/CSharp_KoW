@@ -1,0 +1,30 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Ap22
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //<> - typ generyczny czyli może mieć typ danych dowolny
+            Dictionary<int, string> słownik = new Dictionary<int, string>();
+            słownik.Add(5, "Ania");
+            słownik.Add(2, "Barek");
+            if (!słownik.ContainsKey(3)) 
+                słownik.Add(3, "Ola"); //nie musi być pokolei i values mogą się powtarzać
+            słownik.Add(100, "Ola");
+
+            foreach (var item in słownik)
+            {
+                Console.WriteLine("{0} : {1}", item.Key, item.Value);
+            }
+
+            Console.ReadKey();
+
+        }
+    }
+}
