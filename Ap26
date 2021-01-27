@@ -1,0 +1,63 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Ap26
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //CialoNiebieskie cialoNiebieskie = new CialoNiebieskie(); - to nie jest teraz możliwe ponieważ ustawiliśmy ciało niebieskie jako abstract
+            //cialoNiebieskie.Nazwa = "MARS";
+            //Console.WriteLine(cialoNiebieskie.Nazwa);
+
+            Ziemia ziemia = new Ziemia();
+            ziemia.Atmosfera();
+            ziemia.PoraDniaINocy();
+            ziemia.RuchObrotowy();
+
+            Mars mars = new Mars();
+            mars.RuchObrotowy();
+
+            Console.ReadKey();
+        }
+    }
+
+    abstract class CialoNiebieskie // dzięi abstract teraz nie możemy korzystać z tej klasy
+    {
+        public string Nazwa { get; set; }
+        public void RuchObrotowy()
+        {
+            Console.WriteLine("Każde ciało niebieskie posiada ruch obrotowy");
+        }
+
+    }
+    //dziedziczy zawsze max po 1 klasie
+    abstract class Planeta : CialoNiebieskie  //chcemy żeby Planeta dziedziczyła z CiałaNiebkieskiego
+    {
+        public void PoraDniaINocy()
+        {
+            Console.WriteLine("Pora dnia i nocy");
+        }
+    }
+
+    class Ziemia : Planeta
+    {
+        public void Atmosfera()
+        {
+            Console.WriteLine("Atmosfera Ziemska");
+        }
+    }
+
+    class Mars : Planeta
+    {
+        public void Atmosfera()
+        {
+            Console.WriteLine("Atmosfera Ziemska");
+        }
+    }
+
+}
