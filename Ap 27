@@ -1,0 +1,57 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Ap27
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Postac p1 = new Postac("Elf", 200);
+            Console.WriteLine(p1.imie + " " + p1.punktyHP);
+            Console.WriteLine();
+
+            Mag p2 = new Mag("MaguskaPL", 250, 30);
+            Console.WriteLine(p2.imie + " " + p2.punktyHP + " " + p2.mana);
+            //możemy tutaj czerpać z postaci dzięki dziedziczeniu konstruktorów
+
+
+            Console.ReadKey();
+        }
+        
+    }
+
+
+    class Postac
+    {
+        //public Postac()
+        //{
+
+        //}
+        public Postac(string imie, int punktyHP) //ctor - konstruktor
+        {
+            this.imie = imie; //this to jest taki zasięg bardziej globalny
+            this.punktyHP = punktyHP;
+
+        }
+
+        public string imie; //przez this deklarujemy że chodzi nam o tą klasę - te dwie zmienne tutaj
+        public int punktyHP;
+
+    }
+
+    class Mag : Postac
+    {  // tutaj to działa ponieważ podstawowy konstruktor jest bezparametrowy
+        // u kolesia na yt nie działało tu działa może nowy patch????
+        public Mag(string imie, int punktyHP, int mana) : base (imie, punktyHP)
+        {
+            this.mana = mana;   
+        }
+
+        public int mana;
+    }
+
+}
