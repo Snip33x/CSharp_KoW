@@ -1,0 +1,65 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Ap30
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //Punkt2D punkt1 = new Punkt2D(9,4); // można tak ale nie trzeba w strukturach
+            Punkt2D punkt1;
+            punkt1.x = 5;
+            punkt1.y = 10;
+
+            
+
+            Punkt2D punkt2;
+            punkt2 = punkt1; //jest kopiowane i nie zmienia wartośc pkt 1 - nie jest typu referencyjnego
+            punkt2.x = 7;
+
+            Punkt2D punkt3 = punkt1 + punkt2; // XX1 żeby dodać do siebie te dwa punkty musieliśmy utorzyć static operatora 
+
+            Console.WriteLine("{0} {1}", punkt3.x , punkt3.y);
+            Console.WriteLine();
+
+            Console.WriteLine(punkt1.x);
+            Console.WriteLine(punkt1.y);
+            Console.WriteLine(punkt1.OdlegloscOdSrodka());
+            Console.WriteLine(punkt2.y);
+
+            Console.ReadKey();
+        }
+    }
+
+
+    struct Punkt2D // jest mocno związana z intami i double
+    {
+        public static Punkt2D operator + (Punkt2D a, Punkt2D b) // XX1 o tego 
+        {
+            return new Punkt2D(a.x + b.x, a.y + b.y);
+        }
+        public Punkt2D(int x, int y) // przykład że konstruktor może być w strukturach
+        {
+            this.x = x;
+            this.y = y;
+        }
+
+        public int x; //tu nie da się odrazu przypisać wartości do zmiennej, można to obejść poprzez const
+        public int y; 
+        public double OdlegloscOdSrodka()
+        {
+            return Math.Round(Math.Sqrt(Math.Pow(x, 2) + Math.Pow(y, 2)),1);
+        }
+    }
+
+    //struct Punk3D  // :IComparable // różnica między klasami że nie możemy dziedziczyć nic innego oprócz interfejsów
+
+}
+
+
+
+//mówi się żę struktura to taka trochę ograniczona klasa
