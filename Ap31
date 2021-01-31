@@ -1,0 +1,27 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Ap31
+{
+    enum PoryRoku // :byte - zmniejszamy wielkość jakoś mogą przyjmować enumeraty
+    {
+        Wiosna = 6, Lato, Jesień = 2, Zima= 3, //Te dane są brane pod uwagę jako stringi
+            klusia, brzuś // wartośc się inkrementują, ale można przypisywać jakie chcemy numerki
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //enumerate - typ wyliczeniowy
+            PoryRoku poraRoku = PoryRoku.Zima;
+            PoryRoku poraRokuRzutOdwrotny = (PoryRoku)6;
+            Console.WriteLine(poraRokuRzutOdwrotny);
+            Console.WriteLine((int)poraRoku); // mmogę odrazu tutaj PoryRoku.Zima
+            Console.ReadKey(); // tak łatwo dzięi rzutowaniu możemy odczytać wartość
+        }
+    }
+}
