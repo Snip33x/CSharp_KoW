@@ -1,0 +1,60 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Ap33
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            try
+            {
+                Console.WriteLine(" wynik to " + Dzielenie(5));
+            }
+            catch (DivideByFiveException exc)
+            {
+                Console.WriteLine("Wyjątek dzielenia prez 5\n" + exc.Message); //możemy teraz korzystać z tego wyjątku, i nie wykonywany już jest exception ogólny któy łapie wszystko
+            }
+            catch (DivideByZeroException e)  // lokalna zmienna
+            {
+                Console.WriteLine("Dzielisz przez zero -+ podstawowa wiadomość -- " + e.Message);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("O nie coś poszło nie tak ///" + e.Message);
+            }
+
+
+            Console.ReadKey();
+        }
+
+        public static float Dzielenie(int a) //static - musielibyśmy tworzyć nową klasę
+        {
+            if (a == 5)
+            {
+                throw new DivideByFiveException("nie dzielimy przez 5"); // tutaj mamy teraz 3 przeciążenia które stworzyliśmy - ctrl . na exception poniżej  z którego dziedziczymy
+            }
+            return 10 / a;
+        }
+    }
+
+    class DivideByFiveException : Exception
+    {
+        public DivideByFiveException()//możemy zamist message dać tutaj ten konstruktor i tutaj jeszcze różne rzeczy powpisywać, jeżeli chcemy coś oprócz message
+        {
+            Console.WriteLine("błąd");
+        }
+
+        public DivideByFiveException(string message) : base(message + " Tu możemy dodać dodatkowo w drugim przeciążeniu jakieś info") //jak dodamy ten message, to wtedy podając argument w throw - pokaże nam się wiadomość zamiast tego podstawowego
+        {
+        }
+
+        public DivideByFiveException(string message, Exception innerException) : base(message, innerException)
+        {
+        }
+    }
+
+}   
