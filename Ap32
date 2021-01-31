@@ -1,0 +1,44 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Ap32
+{
+    class Program
+   { 
+        static void Main(string[] args)
+        {
+            try
+            {
+
+
+                Console.WriteLine(" wynik to " + Dzielenie(0));
+            }
+            catch (DivideByZeroException e)  // lokalna zmienna
+            {
+                Console.WriteLine("Dzielisz przez zero -+ podstawowa wiadomość -- " + e.Message);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("O nie coś poszło nie tak ///" + e.Message);
+            }
+            finally // nie jest obowiązkowe - wykona się mimo że nie będzie żadnego wyjątku i wszystko ładnie przejdzie
+            {
+                Console.WriteLine("Ja i tak posprzątam.");
+            }
+
+            Console.ReadKey();
+        }
+
+        public static float Dzielenie(int a) //static - musielibyśmy tworzyć nową klasę
+        {
+            if (a == 5)
+            {
+                throw new Exception("Nigdy nie dziel przez 5");
+            }
+            return 10 / a;
+        }
+    }
+}
