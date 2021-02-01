@@ -1,0 +1,54 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Ap34
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Zwierze zwierze = new Zwierze();
+            Kot kot = new Kot();
+
+            zwierze = kot; // jeżeli to damy wtedy , zwierze is kot będzie zwracało True
+
+            Kot kot3 = zwierze as Kot; //może zwrócić nulla
+
+            if(kot is Kot) // zwraca True -- is Zwierze też True, zwierze is zwierze też true, zwierze is kot false // Nie każde zwierze było wcześniej kotem
+            {
+                Kot kot2 = (Kot)zwierze; // kiedy chcemy przejść z hierarchi niżej do wyżej
+                Console.WriteLine("Powiodło się");
+            }
+            else
+            {
+                //Kot kot2 = (Kot)zwierze; //takie rzutowanie jest niebezpieczne i nie poiwnno go tu być
+                Console.WriteLine("Nie Powiodło się");
+            }
+
+
+
+            Console.ReadKey();
+        }
+    }
+
+    class Zwierze
+    {
+        public void DajGlos()
+        {
+            Console.WriteLine("Domyślny głos");
+        }
+    }
+
+    class Kot : Zwierze
+    {
+        public void PijMleko()
+        {
+            Console.WriteLine("Piję mleko");
+        }
+
+    }
+}
+
