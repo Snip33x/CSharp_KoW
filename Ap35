@@ -1,0 +1,45 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Ap35
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string path = @"plik.txt"; //bezpośrednia ścieżka //@"c:\program files"; //jak dodamy @ przed ścieżką to nie trzeba podwójnie backslashować - sprawdz w pythonie
+            StreamWriter sw; //
+
+            if(!File.Exists(path)) //żebyśmy sobie nie nadpisywali
+            {
+                sw = File.CreateText(path);  // create byśmy używali filestreamer a tu konkretnie do texta StreamWriter
+                Console.WriteLine("plik został utowrzony");
+            }
+            else
+            {
+                sw = new StreamWriter(path, true);
+                Console.WriteLine("plik został otwarty");
+            }
+            Console.WriteLine("Podaj tekst: ");
+            string tekst = Console.ReadLine();
+            sw.WriteLine(tekst);
+            sw.Close(); //warto zamykać żeby zwolnić miejsce w buforze
+
+            StreamReader sr = File.OpenText(path);
+            string s = ""; //przechowuje odczytane informację z pliku - poprostu pusty string jak usuwamy ="" to się w sumie nic nie zmienia i nadal działa jak powinno
+            int i = 1; // poprostu chcemy policzyć ile linijek mamy w pliku tak jak tu w VS
+            Console.WriteLine("\nZawartość Pliku");
+            while((s = sr.ReadLine()) != null) //musimy tak jakby ciągle pobierać te informację z pliku - XXX do sprawdzenia czy zawsze tak trzeba
+            {
+                Console.WriteLine(i++ + ". " + s);
+            }
+            sr.Close();
+
+            Console.ReadKey();
+        }
+    }
+}
