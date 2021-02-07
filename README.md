@@ -15,7 +15,7 @@ C# z yt
 10. Kurs C# dla początkujących - Tablice (część 2) 
 11. Kurs C# dla początkujących - Funkcje (część 1) 
 12. Kurs C# dla początkujących - Funkcje (część 2) 
-13. Kurs C# dla początkujących - Funkcje (część 3) 
+13. Kurs C# dla początkujących - Funkcje (część 3) // system diagnostic
 14. Kurs C# dla początkujących - Klasy i Obiekty (część 1) 
 15. Kurs C# dla początkujących - Konstruktory - Klasy i Obiekty (część 2) 
 16. Kurs C# dla początkujących - Static vs Non-static Klasy i Obiekty (część 3) 
